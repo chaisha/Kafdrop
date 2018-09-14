@@ -152,12 +152,45 @@
          <version>0.7.1</version>
          <scope>test</scope>
       </dependency>
+
+      <dependency>
+         <groupId>io.confluent</groupId>
+         <artifactId>kafka-schema-registry</artifactId>
+         <version>3.3.0</version>
+         <exclusions>
+            <exclusion>
+               <groupId>org.slf4j</groupId>
+               <artifactId>slf4j-log4j12</artifactId>
+            </exclusion>
+         </exclusions>
+      </dependency>
+      <dependency>
+         <groupId>io.confluent</groupId>
+         <artifactId>kafka-avro-serializer</artifactId>
+         <version>3.3.0</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.avro</groupId>
+         <artifactId>avro</artifactId>
+         <version>1.8.2</version>
+         <exclusions>
+            <exclusion>
+               <groupId>org.slf4j</groupId>
+               <artifactId>slf4j-api</artifactId>
+            </exclusion>
+         </exclusions>
+      </dependency>
       <!-- Right now only needed by integration tests -->
       <dependency>
          <groupId>org.apache.kafka</groupId>
          <artifactId>kafka-clients</artifactId>
-         <version>0.8.2.2</version>
+         <version>0.10.1.1</version>
          <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.kafka</groupId>
+         <artifactId>kafka-clients</artifactId>
+         <version>1.0.0</version>
       </dependency>
    </dependencies>
 
@@ -349,7 +382,6 @@
                      <fork>false</fork>
                      <arguments>
                         <argument>--server.port:11017</argument>
-                        <argument>--zookeeper.connect=localhost:2180</argument>
                      </arguments>
                   </configuration>
                   <executions>
