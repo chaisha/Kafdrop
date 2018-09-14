@@ -26,6 +26,11 @@ curator.discovery:
    enabled: true
    basePath: /homeadvisor/services
 
+
+
+zookeeper.connect: localhost:2181
+schema.registry: http://localhost:6100
+
 # Properties to expose via the InfoEndpoint & ServiceDiscovery
 info.build:
    artifact: ${project.artifactId}
